@@ -1,9 +1,22 @@
 # restfulapigenerator
 
-借鉴了[get-it-ready](https://github.com/pankajpatel/get-it-ready) 
+借鉴了[get-it-ready](https://github.com/pankajpatel/get-it-ready) ，遍历componentPath指定的目录中以*.components.js方式命名的文件
+```JS
+server.register(
+	[{
+		'register': require('restfulapigenerator'),
+		'options': {
+			componentPath: __dirname + '/components/',
+			db: require('mongoose')
+		}
+	}]
+);
+```
 
 例子
 ```JS
+//games.component.js
+
 const Joi = require('joi');		
 module.exports = {
 	info: {
@@ -21,6 +34,8 @@ module.exports = {
 
 自定义更多功能
 ```JS
+//session.component.js
+
 const Joi = require('joi');
 const apiInfo = require('restfulapigenerator').apiInfo;
 const Boom = require('boom');
