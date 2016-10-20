@@ -1,6 +1,6 @@
 {
   "name": "restfulapigenerator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "借鉴get-it-ready，生成RestfulAPI，使用Hapi框架，Mongo数据库，",
   "main": "index.js",
   "scripts": {
