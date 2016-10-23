@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "boom": "~2.*",
-    "hapi": "~9.*",
+    "hapi": "~15.*",
     "joi": "~6.*",
     "lodash": "~4.*",
     "mongoose": "~4.*",
