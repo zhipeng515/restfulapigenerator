@@ -17,7 +17,7 @@
     "lodash": "~4.*",
     "mongoose": "~4.*",
     "mongoose-softdelete": "~0.6.*",
-    "mongoose-sequenceid": "^0.0.1",
+    "mongoose-sequenceid": "^0.0.2",
     "require-all": "^2.0.0"
   },
   "author": "",
