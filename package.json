@@ -1,6 +1,6 @@
 {
   "name": "restfulapigenerator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "借鉴get-it-ready，生成RestfulAPI，使用Hapi框架，Mongo数据库，",
   "main": "index.js",
   "scripts": {
@@ -11,9 +11,9 @@
     "url": "https://github.com/zhipeng515/restfulapigenerator.git"
   },
   "dependencies": {
-    "boom": "~2.*",
+    "boom": "~4.*",
     "hapi": "~15.*",
-    "joi": "~6.*",
+    "joi": "~9.*",
     "lodash": "~4.*",
     "power-assert": "~1.0",
     "mongoose": "~4.*",
