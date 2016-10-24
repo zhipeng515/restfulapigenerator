@@ -16,11 +16,14 @@ module.exports = {
             getAll: {
                 filter: {
                     _id: false,
-                    id: true
+                    id: true,
+                    content: false
                 },
-                condition: {
-                    deleted: {$ne: true},
-                    title: {$ne: 'abc'}
+                condition: function(request) {
+                    return {
+                        id: {$lt: request.query.lastId},
+                        deleted: {$ne: true}
+                    }
                 }
             },
             getOne: {
