@@ -1,6 +1,6 @@
 {
   "name": "restfulapigenerator",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "借鉴get-it-ready，生成RestfulAPI，使用Hapi框架，Mongo数据库，",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
     "hapi": "~15.*",
     "joi": "~6.*",
     "lodash": "~4.*",
+    "power-assert": "~1.0",
     "mongoose": "~4.*",
     "mongoose-softdelete": "~0.6.*",
     "mongoose-sequenceid": "~0.*",
