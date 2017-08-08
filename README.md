@@ -1,6 +1,6 @@
 # restfulapigenerator
 
-借鉴了[get-it-ready](https://github.com/pankajpatel/get-it-ready) ，遍历componentPath指定的目录中以*.components.js方式命名的文件
+借鉴了[get-it-ready](https://github.com/pankajpatel/get-it-ready) ，遍历componentPath指定的目录中以*.components.js方式命名的文件，并且遵照[hapi-swagger](https://github.com/glennjones/hapi-swagger)规则，可以自动生成swagger测试文档。
 ```JS
 server.register(
 	[{
@@ -9,7 +9,17 @@ server.register(
 			componentPath: __dirname + '/components/',
 			db: require('mongoose')
 		}
-	}]
+	},
+	{
+            	'register': require('hapi-swagger'),
+            	'options': {
+                info: {
+                    'title': 'XXXXXX API Documentation',
+                    'version': require('./package').version,
+                },
+                debug: true
+            }
+        }]
 );
 ```
 
