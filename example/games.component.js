@@ -6,10 +6,33 @@ module.exports = {
         version: '0.0.1'
     },
     Schema: {
-        title         : { type: String, required: true, trim: true, joi: Joi.string() },
-        content       : { type: String, required: true, trim: true, joi: Joi.string() },
-        cover         : { type: String, required: true, trim: true, joi: Joi.string().uri({scheme:/https?/}) },
-        media         : { type: String, required: true, trim: true, joi: Joi.string().uri({scheme:/https?/}) }
+        userid        : { type: Number, required: true, unique: true, joi: Joi.number() },
+        opponentid    : { type: Number, required: true, joi: Joi.number(),
+            join: {
+                path: 'opponent',
+                bind: {
+                    ref: 'User',
+                    localField: 'opponentid',
+                    foreignField: 'id',
+                    justOnce: true
+                },
+                select: 'nickname avatar -_id'
+            }
+        },
+        round         : { type: Number, required: true, joi: Joi.number() },
+        turn          : { type: Number, required: true, joi: Joi.number() },
+        drawingid     : { type: Number, required: true, joi: Joi.number(),
+            join: {
+                path: 'drawing',
+                bind: {
+                    ref: 'Drawing',
+                    localField: 'drawingid',
+                    foreignField: 'id',
+                    justOnce: true
+                },
+                select: 'title answer options -_id'
+            }
+        }
     },
     Options: {
         controllers: {
@@ -17,7 +40,7 @@ module.exports = {
                 filter: {
                     _id: false,
                     id: true,
-                    content: false
+                    turn: false
                 },
                 condition: function(request) {
                     return {
