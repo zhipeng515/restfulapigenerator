@@ -2,7 +2,7 @@
 
 借鉴了[get-it-ready](https://github.com/pankajpatel/get-it-ready) ，遍历componentPath指定的目录中以*.components.js方式命名的文件，并且遵照[hapi-swagger](https://github.com/glennjones/hapi-swagger)规则，可以自动生成swagger测试文档。
 
-* 详细用法参考[restfulapigenerator-example.git](https://github.com/zhipeng515/restfulapigenerator-example.git)。
+* 详细用法参考[restfulapigenerator-example](https://github.com/zhipeng515/restfulapigenerator-example.git)。
 
 ```JS
 server.register(
